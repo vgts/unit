@@ -16,6 +16,7 @@ jobs:
     steps:
       - name: Declare Variables
         run: |
+          cd dev
           echo "SHA_SHORT=$(git rev-parse --short "$GITHUB_SHA")" >> "$GITHUB_ENV"
           echo "BRANCH=$(echo ${GITHUB_REF#refs/heads/})" >> "$GITHUB_ENV"
           echo "CURRENT_DIR=${{inputs.app-dir}}/$(echo ${GITHUB_REF#refs/heads/})/repos/$(git rev-parse --short "$GITHUB_SHA")" >> "$GITHUB_ENV"
