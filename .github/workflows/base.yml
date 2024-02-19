@@ -3,9 +3,6 @@ name: Reusable workflow
 on:
    workflow_call:
      inputs:
-        # app-dir:
-        #   required: true
-        #   type: string
         runner-name:
           required: true
           type: string
@@ -16,7 +13,4 @@ jobs:
     steps:
       - name: Declare Variables
         run: |
-         # echo "APP_DIR=${{app-dir}}" >> "$GITHUB_ENV"
-         # CAT $APP_DIR
-
          echo hello. world!
