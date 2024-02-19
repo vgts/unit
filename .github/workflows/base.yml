@@ -1,17 +1,15 @@
 name: Reusable workflow
 
 on:
-  push:
-    branches: [ dev ]
+   workflow_call:
+     inputs:
+        config-path:
+          required: true
+          type: string
 jobs:
-  DEPLOY:
-    runs-on: unit
+  deploy:
+    runs-on: ${{ inputs.run-name}}
     steps:
-      - name: Clone Repository
-        uses: actions/checkout@v4
-        with:
-          path: dev
-
       - name: Declare Variables
         run: |
           cd dev
